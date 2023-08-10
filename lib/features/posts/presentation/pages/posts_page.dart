@@ -1,3 +1,4 @@
+import 'package:clean_architecture_posts_app/core/widgets/appbar/appbar_widget.dart';
 import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/posts/posts_bloc.dart';
 import 'package:clean_architecture_posts_app/features/posts/presentation/pages/post_add_update_page.dart';
 import 'package:flutter/material.dart';
@@ -15,15 +16,12 @@ class PostsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppbar(),
+      appBar: const AppBarWidget(title: "Posts"),
       body: _buildBody(),
       floatingActionButton: _buildFloatingActionBtn(context),
     );
   }
 
-  AppBar _buildAppbar() => AppBar(
-        title: const Text("Posts"),
-      );
 
   Widget _buildBody() {
     return Padding(

@@ -1,3 +1,4 @@
+import 'package:clean_architecture_posts_app/core/widgets/appbar/appbar_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/posts.dart';
@@ -11,24 +12,16 @@ class PostDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppbar(),
+      appBar: const AppBarWidget(title: "Post Detail"),
       body: _buildBody(),
-    );
-  }
-
-
-  AppBar _buildAppbar() {
-    return AppBar(
-      title: const Text("Post Detail"),
     );
   }
 
   Widget _buildBody() {
     return Center(
         child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: PostDetailWidget(post: post),
-        )
-    );
+      padding: const EdgeInsets.all(10),
+      child: PostDetailWidget(post: post),
+    ));
   }
 }

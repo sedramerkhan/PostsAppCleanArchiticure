@@ -1,3 +1,4 @@
+import 'package:clean_architecture_posts_app/core/widgets/appbar/appbar_widget.dart';
 import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/add_delete_update_post/add_delete_update_post_bloc.dart';
 import 'package:clean_architecture_posts_app/features/posts/presentation/pages/posts_page.dart';
 import 'package:flutter/material.dart';
@@ -19,14 +20,8 @@ class PostAddUpdatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _buildAppbar(),
+      appBar: AppBarWidget(title: isUpdatePost ? "Edit Post" : "Add Post"),
       body: _buildBody(context),
-    );
-  }
-
-  AppBar _buildAppbar() {
-    return AppBar(
-      title: Text(isUpdatePost ? "Edit Post" : "Add Post"),
     );
   }
 
