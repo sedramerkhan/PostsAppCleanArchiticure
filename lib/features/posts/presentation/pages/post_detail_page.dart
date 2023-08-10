@@ -18,10 +18,9 @@ class PostDetailPage extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    return Center(
-        child: Padding(
+    return Padding(
       padding: const EdgeInsets.all(10),
       child: PostDetailWidget(post: post),
-    ));
+    );
   }
 }
