@@ -1,4 +1,4 @@
-import 'package:clean_architecture_posts_app/features/posts/presentation/pages/post_detail_page/update_post_btn_widget.dart';
+import 'package:clean_architecture_posts_app/features/posts/presentation/widgets/post_detail_page/update_post_btn_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../domain/entities/posts.dart';

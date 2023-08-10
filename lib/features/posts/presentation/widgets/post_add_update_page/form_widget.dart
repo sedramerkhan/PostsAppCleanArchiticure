@@ -1,5 +1,5 @@
 import 'package:clean_architecture_posts_app/features/posts/presentation/bloc/add_delete_update_post/add_delete_update_post_bloc.dart';
-import 'package:clean_architecture_posts_app/features/posts/presentation/pages/post_add_update_page/text_form_field_widget.dart';
+import 'package:clean_architecture_posts_app/features/posts/presentation/widgets/post_add_update_page/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,14 +28,10 @@ class _FormWidgetState extends State<FormWidget> {
 
   @override
   void initState() {
-    // if(widget.post != null){
-    //   _titleController.text = widget.post!.title;
-    //   _bodyController.text = widget.post!.body;
-    // }
-
     _titleController.text = widget.post?.title ?? "";
-
     _bodyController.text = widget.post?.body ?? "";
+
+    super.initState();
   }
 
   @override

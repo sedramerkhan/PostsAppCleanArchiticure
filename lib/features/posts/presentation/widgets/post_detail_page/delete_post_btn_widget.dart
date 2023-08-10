@@ -5,7 +5,7 @@ import '../../../../../core/util/SnackBarMessage.dart';
 import '../../../../../core/widgets/loading_widget.dart';
 import '../../bloc/add_delete_update_post/add_delete_update_post_bloc.dart';
 import '../../bloc/add_delete_update_post/add_delete_update_post_state.dart';
-import '../posts_page.dart';
+import '../../pages/posts_page.dart';
 import 'delete_dialog_widget.dart';
 
 class DeletePostBtnWidget extends StatelessWidget {

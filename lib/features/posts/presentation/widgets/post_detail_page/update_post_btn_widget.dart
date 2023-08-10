@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../domain/entities/posts.dart';
-import '../post_add_update_page.dart';
+import '../../pages/post_add_update_page.dart';
 
 class UpdatePostBtnWidget extends StatelessWidget {
 
