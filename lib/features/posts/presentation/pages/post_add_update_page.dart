@@ -26,34 +26,32 @@ class PostAddUpdatePage extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context) {
-    return Center(
-      child: Padding(
-          padding: const EdgeInsets.all(10),
-          child:
-              BlocConsumer<AddDeleteUpdatePostBloc, AddDeleteUpdatePostState>(
-            //show snackbar , navigate
-            listener: (context, state) {
-              if (state is MessageAddDeleteUpdatePostState) {
-                SnackBarMessage().showSuccessSnackBar(
-                    message: state.message, context: context);
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (_) => const PostsPage()),
-                    (route) => false);
-              } else if (state is ErrorAddDeleteUpdatePostState) {
-                SnackBarMessage().showErrorSnackBar(
-                    message: state.message, context: context);
-              }
-            },
+    return Padding(
+        padding: const EdgeInsets.all(10),
+        child:
+            BlocConsumer<AddDeleteUpdatePostBloc, AddDeleteUpdatePostState>(
+          //show snackbar , navigate
+          listener: (context, state) {
+            if (state is MessageAddDeleteUpdatePostState) {
+              SnackBarMessage().showSuccessSnackBar(
+                  message: state.message, context: context);
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (_) => const PostsPage()),
+                  (route) => false);
+            } else if (state is ErrorAddDeleteUpdatePostState) {
+              SnackBarMessage().showErrorSnackBar(
+                  message: state.message, context: context);
+            }
+          },
 //return widget
-            builder: (context, state) {
-              if (state is LoadingAddDeleteUpdatePostState) {
-                return const LoadingWidget();
-              }
+          builder: (context, state) {
+            if (state is LoadingAddDeleteUpdatePostState) {
+              return const LoadingWidget();
+            }
 
-              return FormWidget(
-                  isUpdatePost: isUpdatePost, post: isUpdatePost ? post : null);
-            },
-          )),
-    );
+            return FormWidget(
+                isUpdatePost: isUpdatePost, post: isUpdatePost ? post : null);
+          },
+        ));
   }
 }

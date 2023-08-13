@@ -52,7 +52,7 @@ class PostsPage extends StatelessWidget {
                       isUpdatePost: false,
                     )));
       },
-      child: const Icon(Icons.add),
+      child: const Icon(Icons.add,color: Colors.white,),
     );
   }
 

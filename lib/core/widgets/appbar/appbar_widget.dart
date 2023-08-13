@@ -1,5 +1,5 @@
 import 'package:clean_architecture_posts_app/core/app_theme.dart';
-import 'package:clean_architecture_posts_app/core/widgets/appbar/BackgroundWaveClipper.dart';
+import 'package:clean_architecture_posts_app/core/widgets/appbar/background_wave_clipper.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
