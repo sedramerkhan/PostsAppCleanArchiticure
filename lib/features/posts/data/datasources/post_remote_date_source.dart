@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:clean_architecture_posts_app/features/posts/data/models/post_model.dart';
 import 'package:dartz/dartz.dart';
@@ -28,7 +29,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   Future<List<PostModel>> getAllPosts() async {
     final response = await client.get(
       Uri.parse("$BASE_URL/posts/"),
-      headers: {"Content-Type": "application/json"},
+      headers: {HttpHeaders.contentTypeHeader: "application/json"},
     );
 
     if (response.statusCode == 200) {
@@ -66,7 +67,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   Future<Unit> deletePost(int postId) async {
     final response = await client.delete(
       Uri.parse("$BASE_URL/posts/${postId.toString()}"),
-      headers: {"Content-Type": "application/json"},
+      headers: {HttpHeaders.contentTypeHeader: "application/json"},
     );
     if (response.statusCode == 200) {
       return Future.value(unit);
